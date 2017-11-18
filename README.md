@@ -8,3 +8,9 @@ pip install --upgrade watson-developer-cloud
 
 2.programming languages
 python 2.7
+
+3. Django 
+ pip install django chatterbot
+ python manage.py migrate
+   1. run in the terminal: python manage.py runserver 0.0.0.0:8000
+   2. run on the web: http://127.0.0.1:8000
