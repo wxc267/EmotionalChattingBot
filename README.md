@@ -11,5 +11,5 @@ python 2.7
 
 3. Django 
 python manage.py migrate
-  1. run in the terminal: python manage.py migrate
+  1. run in the terminal: python manage.py runserver 0.0.0.0:8000
   2. run on the web: http://127.0.0.1:8000
