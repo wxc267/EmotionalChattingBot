@@ -94,8 +94,8 @@ def callback(event):
                 
                 R.image_create('insert',image = r_avt)
 		bot_response=bot.get_response(in_str)
-                R.insert(END,'end',' ' + bot_response + "\n")
-		emo_lis = emo_ana(str(bot_response))
+                R.insert('end',' ' + str(bot_response) + "\n")
+		emo_lis = emo_ana(in_str)
 		robot_emoji(1,emo_lis)
                 R.config(state=DISABLED)
                 e.delete(0,END);

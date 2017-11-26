@@ -25,5 +25,4 @@ def emo_ana(in_str):
     s = tone["document_tone"]["tone_categories"][0]['tones'][4]['score']
 
     rl = [a,d,f,j,s]
-    print rl
     return rl

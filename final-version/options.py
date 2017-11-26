@@ -67,7 +67,7 @@ options_column = {
         }
     },
     'title': {
-        'text': 'Percentage of Emotions to Each Sentence'
+        'text': 'Comparision'
     },
     'xAxis': {
         'tickmarkPlacement': 'on',

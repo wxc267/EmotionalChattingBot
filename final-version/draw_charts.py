@@ -55,6 +55,7 @@ def drawAreaChart(emotions,chatLog):
 
 def drawColumnChart(emotions):
 	H_column = Highchart(width=750, height=600)
+	H_column.set_options('xAxis',{'categories':['Before','After']})
 	drawChart(options_column,H_column,'column',emotions,'output_charts_column')
 
 
