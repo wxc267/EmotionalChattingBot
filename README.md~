@@ -12,7 +12,7 @@ Running condition:
 	pip install chatterbot
 	
 	c.Tk Image
-	sudo apt-get install python-imaging-tk
+	pip install 
 
 	d.Highcharts
 	pip install python-highcharts
