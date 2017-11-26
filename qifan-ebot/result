@@ -1,0 +1,156 @@
+{
+  "document_tone": {
+    "tone_categories": [
+      {
+        "category_id": "emotion_tone", 
+        "tones": [
+          {
+            "tone_name": "Anger", 
+            "score": 0.081788, 
+            "tone_id": "anger"
+          }, 
+          {
+            "tone_name": "Disgust", 
+            "score": 0.008589, 
+            "tone_id": "disgust"
+          }, 
+          {
+            "tone_name": "Fear", 
+            "score": 0.076676, 
+            "tone_id": "fear"
+          }, 
+          {
+            "tone_name": "Joy", 
+            "score": 0.039805, 
+            "tone_id": "joy"
+          }, 
+          {
+            "tone_name": "Sadness", 
+            "score": 0.6165, 
+            "tone_id": "sadness"
+          }
+        ], 
+        "category_name": "Emotion Tone"
+      }
+    ]
+  }, 
+  "sentences_tone": [
+    {
+      "input_to": 34, 
+      "text": "Team, I know that times are tough!", 
+      "sentence_id": 0, 
+      "tone_categories": [
+        {
+          "category_id": "emotion_tone", 
+          "tones": [
+            {
+              "tone_name": "Anger", 
+              "score": 0.069592, 
+              "tone_id": "anger"
+            }, 
+            {
+              "tone_name": "Disgust", 
+              "score": 0.007056, 
+              "tone_id": "disgust"
+            }, 
+            {
+              "tone_name": "Fear", 
+              "score": 0.047162, 
+              "tone_id": "fear"
+            }, 
+            {
+              "tone_name": "Joy", 
+              "score": 0.042664, 
+              "tone_id": "joy"
+            }, 
+            {
+              "tone_name": "Sadness", 
+              "score": 0.317869, 
+              "tone_id": "sadness"
+            }
+          ], 
+          "category_name": "Emotion Tone"
+        }
+      ], 
+      "input_from": 0
+    }, 
+    {
+      "input_to": 101, 
+      "text": "Product sales have been disappointing for the past three quarters.", 
+      "sentence_id": 1, 
+      "tone_categories": [
+        {
+          "category_id": "emotion_tone", 
+          "tones": [
+            {
+              "tone_name": "Anger", 
+              "score": 0.10126, 
+              "tone_id": "anger"
+            }, 
+            {
+              "tone_name": "Disgust", 
+              "score": 0.025739, 
+              "tone_id": "disgust"
+            }, 
+            {
+              "tone_name": "Fear", 
+              "score": 0.119045, 
+              "tone_id": "fear"
+            }, 
+            {
+              "tone_name": "Joy", 
+              "score": 0.018734, 
+              "tone_id": "joy"
+            }, 
+            {
+              "tone_name": "Sadness", 
+              "score": 0.771241, 
+              "tone_id": "sadness"
+            }
+          ], 
+          "category_name": "Emotion Tone"
+        }
+      ], 
+      "input_from": 35
+    }, 
+    {
+      "input_to": 178, 
+      "text": "We have a competitive product, but we need to do a better job of selling it!", 
+      "sentence_id": 2, 
+      "tone_categories": [
+        {
+          "category_id": "emotion_tone", 
+          "tones": [
+            {
+              "tone_name": "Anger", 
+              "score": 0.064169, 
+              "tone_id": "anger"
+            }, 
+            {
+              "tone_name": "Disgust", 
+              "score": 0.0379, 
+              "tone_id": "disgust"
+            }, 
+            {
+              "tone_name": "Fear", 
+              "score": 0.085963, 
+              "tone_id": "fear"
+            }, 
+            {
+              "tone_name": "Joy", 
+              "score": 0.226295, 
+              "tone_id": "joy"
+            }, 
+            {
+              "tone_name": "Sadness", 
+              "score": 0.1997, 
+              "tone_id": "sadness"
+            }
+          ], 
+          "category_name": "Emotion Tone"
+        }
+      ], 
+      "input_from": 102
+    }
+  ]
+}
