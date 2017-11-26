@@ -1,0 +1,118 @@
+options_area = {
+    'chart': {
+        'type': 'area',
+		'renderTo': 'container_area'
+    },
+    'title': {
+        'text': 'Changes in Percentage of Emotions'
+    },
+    'xAxis': {
+        'tickmarkPlacement': 'on',
+        'title': {
+            'enabled': False
+        }
+    },
+    'yAxis': {
+        'title': {
+            'text': 'Percent'
+        },
+        'labels': {
+            'formatter': 'function () {\
+                                return this.value ;\
+                            }'
+        }
+    },
+    'tooltip': {
+        'shared': True,
+
+    },
+
+    'plotOptions': {
+        'area': {
+            'stacking': 'percent',
+            'lineColor': '#666666',
+            'lineWidth': 1,
+            'marker': {
+                'lineWidth': 1,
+                'lineColor': '#666666'
+            },
+            'credits': {'enabled': True},
+            "legend": {}
+        },
+
+        'series': {
+            'label': {
+                'minFontSize': 5,
+                'maxFontSize': 15,
+                'enabled':True,
+                'style': {
+                    'color': 'blue'
+                },
+                'onArea':True
+            }
+        }
+    }
+}
+
+options_column = {
+    'chart': {
+        'type': 'column',
+		'renderTo': 'container_column',
+        'options3d': {
+            'enabled': True,
+            'alpha': 15,
+            'beta': 15,
+            'viewDistance': 25,
+            'depth': 40
+        }
+    },
+    'title': {
+        'text': 'Percentage of Emotions to Each Sentence'
+    },
+    'xAxis': {
+        'tickmarkPlacement': 'on',
+        'title': {
+            'enabled': False
+        }
+    },
+    'yAxis': {
+        'title': {
+            'text': 'Percent'
+        },
+        'labels': {
+            'formatter': 'function () {\
+                                return this.value ;\
+                            }'
+        }
+    },
+    'tooltip': {
+        'shared': True,
+
+    },
+
+    'plotOptions': {
+        'area': {
+            'stacking': 'percent',
+            'lineColor': '#666666',
+            'lineWidth': 1,
+            'marker': {
+                'lineWidth': 1,
+                'lineColor': '#666666'
+            },
+            'credits': {'enabled': True},
+            "legend": {}
+        },
+
+        'series': {
+            'label': {
+                'minFontSize': 5,
+                'maxFontSize': 15,
+                'enabled':True,
+                'style': {
+                    'color': 'blue'
+                },
+                'onArea':True
+            }
+        }
+    }
+}
