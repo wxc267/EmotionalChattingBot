@@ -5,7 +5,7 @@ Running condition:
 
 <h3>1. installing The IBM Watson™ Tone Analyzer service</h3>
 
-	<pre><code>pip install --upgrade watson-developer-cloud</code></pre>
+	pip install --upgrade watson-developer-cloud
 
 <h3>2. programming languages</h3>
 	python 2.7
