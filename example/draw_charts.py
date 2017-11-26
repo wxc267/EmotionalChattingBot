@@ -3,8 +3,8 @@ import json
 from watson_developer_cloud import ToneAnalyzerV3 
 from glob import glob
 from highcharts import Highchart
-H = Highchart(width=750, height=600)
-H_2 = Highchart(width=750, height=600)
+H_area = Highchart(width=750, height=600)
+H_column = Highchart(width=750, height=600)
 
 tone_analyzer = ToneAnalyzerV3(
   url= "https://gateway.watsonplatform.net/tone-analyzer/api",
@@ -53,13 +53,10 @@ while i<len(sentence) :
 options = {
     'chart': {
         'type': 'area',
-		'renderTo': 'container_1'
+		'renderTo': 'container_area'
     },
     'title': {
-        'text': 'Title'
-    },
-    'subtitle': {
-        'text': 'Subtitle'
+        'text': 'Changes in Percentage of Emotions'
     },
     'xAxis': {
         'categories': Xcategory,
@@ -110,19 +107,19 @@ options = {
     }
 }
 
-H.set_dict_options(options)
+H_area.set_dict_options(options)
 
-H.add_data_set(Joy, 'area', 'joy',color = 'rgb(241,199,28)')
-H.add_data_set(Anger, 'area', 'anger',color ='rgb(207,46,17)')
-H.add_data_set(Disgust, 'area', 'disgust',color ='rgb(118,181,92)')
-H.add_data_set(Fear, 'area', 'fear',color ='rgb(151,77,193)')
-H.add_data_set(Sadness, 'area', 'sadness',color ='rgb(46,116,213)')
-H.save_file('highcharts')
+H_area.add_data_set(Joy, 'area', 'joy',color = 'rgb(241,199,28)')
+H_area.add_data_set(Anger, 'area', 'anger',color ='rgb(207,46,17)')
+H_area.add_data_set(Disgust, 'area', 'disgust',color ='rgb(118,181,92)')
+H_area.add_data_set(Fear, 'area', 'fear',color ='rgb(151,77,193)')
+H_area.add_data_set(Sadness, 'area', 'sadness',color ='rgb(46,116,213)')
+H_area.save_file('output_charts_area')
 
-options_2 = {
+options_column = {
     'chart': {
         'type': 'column',
-		'renderTo': 'container_2',
+		'renderTo': 'container_column',
         'options3d': {
             'enabled': True,
             'alpha': 15,
@@ -132,10 +129,7 @@ options_2 = {
         }
     },
     'title': {
-        'text': 'Title'
-    },
-    'subtitle': {
-        'text': 'Subtitle'
+        'text': 'Percentage of Emotions to Each Sentence'
     },
     'xAxis': {
         'categories': Xcategory,
@@ -186,11 +180,11 @@ options_2 = {
     }
 }
 
-H_2.set_dict_options(options_2)
+H_column.set_dict_options(options_column)
 
-H_2.add_data_set(Joy, 'column', 'joy',color = 'rgb(241,199,28)')
-H_2.add_data_set(Anger, 'column', 'anger',color ='rgb(207,46,17)')
-H_2.add_data_set(Disgust, 'column', 'disgust',color ='rgb(118,181,92)')
-H_2.add_data_set(Fear, 'column', 'fear',color ='rgb(151,77,193)')
-H_2.add_data_set(Sadness, 'column', 'sadness',color ='rgb(46,116,213)')
-H_2.save_file('highcharts_2')
+H_column.add_data_set(Joy, 'column', 'joy',color = 'rgb(241,199,28)')
+H_column.add_data_set(Anger, 'column', 'anger',color ='rgb(207,46,17)')
+H_column.add_data_set(Disgust, 'column', 'disgust',color ='rgb(118,181,92)')
+H_column.add_data_set(Fear, 'column', 'fear',color ='rgb(151,77,193)')
+H_column.add_data_set(Sadness, 'column', 'sadness',color ='rgb(46,116,213)')
+H_column.save_file('output_charts_column')
