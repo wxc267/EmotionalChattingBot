@@ -4,6 +4,7 @@ from watson_developer_cloud import ToneAnalyzerV3
 from glob import glob
 from highcharts import Highchart
 H = Highchart(width=750, height=600)
+H_2 = Highchart(width=750, height=600)
 
 tone_analyzer = ToneAnalyzerV3(
   url= "https://gateway.watsonplatform.net/tone-analyzer/api",
@@ -51,7 +52,8 @@ while i<len(sentence) :
 #
 options = {
     'chart': {
-        'type': 'area'
+        'type': 'area',
+		'renderTo': 'container_1'
     },
     'title': {
         'text': 'Title'
@@ -116,3 +118,79 @@ H.add_data_set(Disgust, 'area', 'disgust',color ='rgb(118,181,92)')
 H.add_data_set(Fear, 'area', 'fear',color ='rgb(151,77,193)')
 H.add_data_set(Sadness, 'area', 'sadness',color ='rgb(46,116,213)')
 H.save_file('highcharts')
+
+options_2 = {
+    'chart': {
+        'type': 'column',
+		'renderTo': 'container_2',
+        'options3d': {
+            'enabled': True,
+            'alpha': 15,
+            'beta': 15,
+            'viewDistance': 25,
+            'depth': 40
+        }
+    },
+    'title': {
+        'text': 'Title'
+    },
+    'subtitle': {
+        'text': 'Subtitle'
+    },
+    'xAxis': {
+        'categories': Xcategory,
+        'tickmarkPlacement': 'on',
+        'title': {
+            'enabled': False
+        }
+    },
+    'yAxis': {
+        'title': {
+            'text': 'Percent'
+        },
+        'labels': {
+            'formatter': 'function () {\
+                                return this.value ;\
+                            }'
+        }
+    },
+    'tooltip': {
+        'shared': True,
+
+    },
+
+    'plotOptions': {
+        'area': {
+            'stacking': 'percent',
+            'lineColor': '#666666',
+            'lineWidth': 1,
+            'marker': {
+                'lineWidth': 1,
+                'lineColor': '#666666'
+            },
+            'credits': {'enabled': True},
+            "legend": {}
+        },
+
+        'series': {
+            'label': {
+                'minFontSize': 5,
+                'maxFontSize': 15,
+                'enabled':True,
+                'style': {
+                    'color': 'blue'
+                },
+                'onArea':True
+            }
+        }
+    }
+}
+
+H_2.set_dict_options(options_2)
+
+H_2.add_data_set(Joy, 'column', 'joy',color = 'rgb(241,199,28)')
+H_2.add_data_set(Anger, 'column', 'anger',color ='rgb(207,46,17)')
+H_2.add_data_set(Disgust, 'column', 'disgust',color ='rgb(118,181,92)')
+H_2.add_data_set(Fear, 'column', 'fear',color ='rgb(151,77,193)')
+H_2.add_data_set(Sadness, 'column', 'sadness',color ='rgb(46,116,213)')
+H_2.save_file('highcharts_2')
