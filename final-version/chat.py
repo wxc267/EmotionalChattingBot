@@ -78,7 +78,7 @@ def callback(event):
                 R.tag_configure('tag-right', justify='right')
 
                 in_str = e.get()
-                emo_lis = emo_ana(in_str)
+                
                 R.image_create('insert',image = h_avt)
                 R.insert('end',' ' + in_str + "\n") # This is the text you may want to use later
 		#recording the chat log of the user
@@ -91,10 +91,12 @@ def callback(event):
 		if len(chat_start)<10:
 			chat_start.append(in_str)
 
-                robot_emoji(1,emo_lis)
+                
                 R.image_create('insert',image = r_avt)
-                R.insert(END,bot.get_response(in_str))
-
+		bot_response=bot.get_response(in_str)
+                R.insert(END,'end',' ' + bot_response + "\n")
+		emo_lis = emo_ana(str(bot_response))
+		robot_emoji(1,emo_lis)
                 R.config(state=DISABLED)
                 e.delete(0,END);
         return 0
@@ -153,8 +155,17 @@ R.insert(END," Hi, I am " + rname + ", nice to meet you!\n")
 R.config(state=DISABLED)
 ###########################################################
 
+##### Analyze the change of emotion of the user ###########
 chat_log=[]
 chat_start=[]
 mainloop()
 emotions=chatlogAnalyze(chat_log)
 drawAreaChart(emotions,chat_log)
+startChat=''
+for strings in chat_start:
+	startChat+=strings
+endChat=''
+for strings in chat_log:
+	endChat+=strings
+emotions_overall=chatlogAnalyze([startChat,endChat])
+drawColumnChart(emotions_overall)
