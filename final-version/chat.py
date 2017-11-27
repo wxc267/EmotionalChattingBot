@@ -9,6 +9,8 @@ from watson import *
 
 
 def robot_emoji(cond,emo_list):
+	WEAK_FEELING=0.75
+	STRONG_FEELING=0.9
         try:
                 if cond == 0:
                         remo = Image.open("./remoji/init.jpg").resize((200,200),Image.ANTIALIAS)
@@ -29,37 +31,37 @@ def robot_emoji(cond,emo_list):
                                 img_path = "./remoji/sorry.jpg"
                         else:
                                 if max_emo == 'a':
-                                        if max_emov < 0.5:
+                                        if max_emov < WEAK_FEELING:
                                                 img_path = "./remoji/anger1.jpg"
-                                        elif max_emov < 0.75:
+                                        elif max_emov <STRONG_FEELING:
                                                 img_path = "./remoji/anger2.jpg"
                                         else:
                                                 img_path = "./remoji/anger3.jpg"
                                 if max_emo == 'd':
-                                        if max_emov < 0.50:
+                                        if max_emov < WEAK_FEELING:
                                                 img_path = "./remoji/disgust1.jpg"
-                                        elif max_emov < 0.75:
+                                        elif max_emov < STRONG_FEELING:
                                                 img_path = "./remoji/disgust2.jpg"
                                         else:
                                                 img_path = "./remoji/disgust3.jpg"
                                 if max_emo == 'f':
-                                        if max_emov < 0.50:
+                                        if max_emov < WEAK_FEELING:
                                                 img_path = "./remoji/fear1.jpg"
-                                        elif max_emov < 0.75:
+                                        elif max_emov < STRONG_FEELING:
                                                 img_path = "./remoji/fear2.jpg"
                                         else:
                                                 img_path = "./remoji/fear3.jpg"
                                 if max_emo == 'j':
-                                        if max_emov < 0.50:
+                                        if max_emov < WEAK_FEELING:
                                                 img_path = "./remoji/joy1.jpg"
-                                        elif max_emov < 0.75:
+                                        elif max_emov < STRONG_FEELING:
                                                 img_path = "./remoji/joy2.jpg"
                                         else:
                                                 img_path = "./remoji/joy3.jpg"
                                 if max_emo == 's':
-                                        if max_emov < 0.50:
+                                        if max_emov < WEAK_FEELING:
                                                 img_path = "./remoji/sad1.jpg"
-                                        elif max_emov < 0.75:
+                                        elif max_emov < STRONG_FEELING:
                                                 img_path = "./remoji/sad2.jpg"
                                         else:
                                                 img_path = "./remoji/sad3.jpg"
@@ -95,7 +97,7 @@ def callback(event):
                 R.image_create('insert',image = r_avt)
 		bot_response=bot.get_response(in_str)
                 R.insert('end',' ' + str(bot_response) + "\n")
-		emo_lis = emo_ana(in_str)
+		emo_lis = emo_ana(str(bot_response))
 		robot_emoji(1,emo_lis)
                 R.config(state=DISABLED)
                 e.delete(0,END);
