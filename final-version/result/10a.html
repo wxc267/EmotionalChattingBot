@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://www.highcharts.com/highslide/highslide.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/heatmap.js"></script>
+        <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body style="margin:0;padding:0">
+                <div id="container_area" style="width:750px;height:600px;">Loading....</div>
+
+
+    <script>
+        $(function(){
+
+
+ 
+
+
+
+
+            Highcharts.setOptions({"lang": {}, "global": {}});
+            var option = {"loading": {}, "subtitle": {}, "xAxis": {"tickmarkPlacement": "on", "categories": ["wrong answer", "another wrong answer", "study probelm", "How to study well", "How about final exam", "sound better", "Haha you are funny", "I feel better now", "Thank you very much", "bye"], "title": {"enabled": false}}, "title": {"text": "Changes in Percentage of Emotions"}, "series": {}, "labels": {}, "yAxis": {"labels": {"formatter": function () {                                return this.value ;                            }}, "title": {"text": "Percent"}}, "chart": {"width": 750, "renderTo": "container_area", "type": "area", "height": 600}, "tooltip": {"shared": true}, "plotOptions": {"series": {}, "area": {"stacking": "percent", "marker": {"lineWidth": 1, "lineColor": "#666666"}, "lineWidth": 1, "lineColor": "#666666"}}, "credits": {"enabled": false}, "colors": {}, "pane": {}, "exporting": {}, "drilldown": {}, "navigation": {}, "legend": {}};
+
+
+            var data = [{"name": "joy", "color": "rgb(241,199,28)", "type": "area", "data": [0.005079, 0.007544, 0.421662, 0.629265, 0.142172, 0.797665, 0.962653, 0.851351, 0.833058, 0.0]}, {"name": "anger", "color": "rgb(207,46,17)", "type": "area", "data": [0.395119, 0.392955, 0.049722, 0.025741, 0.139054, 0.04415, 0.014075, 0.0, 0.047525, 0.0]}, {"name": "disgust", "color": "rgb(118,181,92)", "type": "area", "data": [0.227243, 0.24626, 0.020911, 0.012402, 0.074776, 0.012421, 0.010317, 0.0, 0.003041, 0.0]}, {"name": "fear", "color": "rgb(151,77,193)", "type": "area", "data": [0.218916, 0.229117, 0.20165, 0.13476, 0.639902, 0.028676, 0.012669, 0.0, 0.007801, 0.0]}, {"name": "sadness", "color": "rgb(46,116,213)", "type": "area", "data": [0.500726, 0.486359, 0.26133, 0.163221, 0.115398, 0.041207, 0.004546, 0.0, 0.018858, 0.0]}];
+            option.series = data;
+
+ 
+
+            var chart = new Highcharts.Chart(option);
+
+
+
+
+
+ 
+
+
+        
+    });
+        </script>
+
+    </body>
+</html>
